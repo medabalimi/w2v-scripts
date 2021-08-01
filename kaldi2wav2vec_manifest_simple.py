@@ -251,7 +251,7 @@ def validate_fs(ctx,param,value):
 @click.option('--manifest_folder', default=None, \
               help="Folder to write the manifest files to. "+
               "Default: 'manifest' subfolder in the input folder")
-@click.option('--valid_percent', default=0.05, type=click.FloatRange(0,1), \
+@click.option('--valid_percent', default=0.0, type=click.FloatRange(0,1), \
               help="percentage of data to use as validation set (0<= val<= 1)"+
               "Default value: 0.0")
 @click.option('--rnd_seed', default=42, type=int, \
