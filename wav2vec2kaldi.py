@@ -14,6 +14,7 @@ def generate_eval_output(tsv_file, hypothesis_file):
         segments=[]
         for line in tsv:
             segments.append({'segment':line.strip().split()[0]})
+
     
     with open(hypothesis_file,'r') as hypothesis:
         for line in hypothesis:
@@ -33,6 +34,9 @@ def write_segments(segments, out_file):
     with open(out_file,'w') as fp:
         for seg in segments:
             print(seg)
+            if 'text' not in seg:
+                print("Missing text, not all segments were decoded")
+                seg['text']=""
             fp.write(f"{seg['segment'].split('/')[-1][:-4]}\t{seg['text']}\n")
             seg_dict[seg['segment'].split('/')[-1][:-4]]=seg['text']
         

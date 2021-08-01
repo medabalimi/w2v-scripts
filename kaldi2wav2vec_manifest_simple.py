@@ -194,9 +194,9 @@ def generate_segments(data_folder, audio_root, target_fs=16000,
         wav_scp=read_wav_scp(data_folder)
         segments=read_segments(data_folder)
         wav_scp=read_wav_scp(data_folder)
-        train['mf'].write(f'{output_dir}\n')
-        train_error['mf'].write(f'{output_dir}\n')
-        valid['mf'].write(f'{output_dir}\n')
+        train['mf'].write(os.path.abspath(f'{output_dir}\n'))
+        train_error['mf'].write(os.path.abspath(f'{output_dir}\n'))
+        valid['mf'].write(os.path.abspath(f'{output_dir}\n'))
         sentences=''
         for seg_id,signal,fs in get_audio_from_segments(segments,wav_scp, audio_root):
         
@@ -253,7 +253,7 @@ def validate_fs(ctx,param,value):
               "Default: 'manifest' subfolder in the input folder")
 @click.option('--valid_percent', default=0.05, type=click.FloatRange(0,1), \
               help="percentage of data to use as validation set (0<= val<= 1)"+
-              "Default value: 0.01")
+              "Default value: 0.0")
 @click.option('--rnd_seed', default=42, type=int, \
               help="random seed. Default: 42")
 @click.argument('data_folder')
