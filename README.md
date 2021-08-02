@@ -23,6 +23,7 @@ Please have a look at generate_evalout.sh for how to create manifests or kaldi h
 
 # Evaluation
 The docker with the models and blind evaluatuion data can be accessed from the Docker hub 
+
     ## Start the docker container
     docker run --shm-size 16G -it medabalimi/is21_subtask2:latest
 
