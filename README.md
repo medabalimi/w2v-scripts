@@ -22,7 +22,7 @@ When evaluation submissions are required in kaldi format, wav2vec2kaldi.py can b
 Please have a look at generate_evalout.sh for how to create manifests or kaldi hypothesis outputs
 
 # Evaluation
-The docker with the models and blind evaluatuion data can be accessed from the Docker hub 
+The docker with the models and blind evaluatuion data can be accessed from the Docker hub. Please note that this is built without CUDA and will be significantly slower than with CUDA. However this is not likely to have dependency issues with various GPU drivers and CUDA versions and would work on most systems.
 
     ## Start the docker container
     docker run --shm-size 16G -it medabalimi/is21_subtask2:latest
