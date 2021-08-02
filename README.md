@@ -4,7 +4,7 @@ Scripts for processing data for use with wav2vec
 This repo consists of scripts required to convert data from kaldi format to wav2vec manifest files and to convert the evaluation results to kaldi compatible ones.
 
 # Converting kaldi based data format to wav2vec
-The script kaldi2wav2vec_manifest_simple.py helps generate manifest files from kaldi files. Run it with --help to check the options.
+The script kaldi2wav2vec_manifest_simple.py can be used to generate manifest files from kaldi files. Run it with --help to check the options.
 
 
 
