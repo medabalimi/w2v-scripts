@@ -20,3 +20,25 @@ When evaluation submissions are required in kaldi format, wav2vec2kaldi.py can b
 
 # Example
 Please have a look at generate_evalout.sh for how to create manifests or kaldi hypothesis outputs
+
+# Evaluation
+The docker with the models and blind evaluatuion data can be accessed from the Docker hub 
+    ## Start the docker container
+    docker run --shm-size 16G -it medabalimi/is21_subtask2:latest
+
+    ## To generate the evaluation outputs for hindi-english
+    cd /opt/is21/subtask2/hindi-english
+
+    sh utils/generate_evalout.sh hindi
+
+    ## The evaluation output will be available at eval/hindi/hindi.txt
+
+    ## To generate the evaluation outputs for hindi-english
+    cd /opt/is21/subtask2/bengali-english
+
+    sh utils/generate_evalout.sh bengali
+
+    ## The evaluation output will be available at eval/bengali/bengali.txt
+
+    
+    
